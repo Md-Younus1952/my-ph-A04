@@ -17,8 +17,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Tailwind & DaisyUI -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.2/dist/full.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
         * {
@@ -55,13 +55,13 @@
         <!-- Available Jobs Header -->
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-xl font-semibold">Available Jobs</h2>
-            <span id="jobCounter" class="text-sm text-gray-500">0 jobs</span>
+            <span id="jobCounter" class="text-sm text-gray-800">0 jobs</span>
         </div>
 
         <!-- Filters -->
         <div class="mb-6 space-x-2">
             <button class="btn btn-primary btn-sm" onclick="filterJobs('all')">All</button>
-            <button class="btn btn-ghost btn-sm" onclick="filterJobs('interview')">Interview</button>
+            <button class="btn btn-click btn-ghost btn-sm" onclick="filterJobs('interview')">Interview</button>
             <button class="btn btn-ghost btn-sm" onclick="filterJobs('rejected')">Rejected</button>
         </div>
 
