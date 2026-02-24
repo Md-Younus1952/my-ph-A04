@@ -33,11 +33,16 @@
         <h1 class="text-4xl font-bold mb-6">Job Application Tracker</h1>
 
         <!-- Stats -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
 
             <div class="stat bg-base-100 rounded-box shadow">
                 <div class="stat-title">Total</div>
                 <div id="totalCount" class="stat-value text-primary">0</div>
+            </div>
+
+            <div class="stat bg-base-100 rounded-box shadow">
+                <div class="stat-title">Applied</div>
+                <div id="appliedCount" class="stat-value text-success">0</div>
             </div>
 
             <div class="stat bg-base-100 rounded-box shadow">
@@ -61,6 +66,7 @@
         <!-- Filters -->
         <div class="mb-6 space-x-2">
             <button class="btn btn-primary btn-sm" onclick="filterJobs('all')">All</button>
+            <button class="btn btn-click btn-ghost btn-sm" onclick="filterJobs('applied')">Applied</button>
             <button class="btn btn-click btn-ghost btn-sm" onclick="filterJobs('interview')">Interview</button>
             <button class="btn btn-ghost btn-sm" onclick="filterJobs('rejected')">Rejected</button>
         </div>

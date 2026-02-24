@@ -113,11 +113,13 @@ function renderJobs(filter = "all") {
 
           <div class="mt-2">
             <span class="badge ${
-              job.status === "interview"
-                ? "badge-success"
-                : job.status === "rejected"
-                  ? "badge-error"
-                  : "badge-neutral"
+              job.status === "not applied"
+                ? "badge-neutral"
+                : job.status === "interview"
+                  ? "badge-success"
+                  : job.status === "rejected"
+                    ? "badge-error"
+                    : "badge-neutral"
             }">
               ${job.status.toUpperCase()}
             </span>
@@ -125,6 +127,10 @@ function renderJobs(filter = "all") {
           </div>
 
           <div class="card-actions mt-4">
+            <button class="btn btn-primary btn-sm"
+              onclick="updateStatus(${job.id}, 'applied')">
+              Applied
+            </button> 
             <button class="btn btn-success btn-sm"
               onclick="updateStatus(${job.id}, 'interview')">
               Interview
@@ -164,6 +170,9 @@ function filterJobs(type) {
 
 function updateStats() {
   document.getElementById("totalCount").innerText = jobs.length;
+  document.getElementById("appliedCount").innerText = jobs.filter(
+    (j) => j.status === "applied",
+  ).length;
   document.getElementById("interviewCount").innerText = jobs.filter(
     (j) => j.status === "interview",
   ).length;
